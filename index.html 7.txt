@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sekolah Budi Bahasa - Profil Resmi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%); min-height: 100vh; font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        
+        .hidden-page { display: none !important; }
+        
+        .page-transition {
+            animation: fadeInSlide 0.5s ease-out forwards;
+        }
+        @keyframes fadeInSlide {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .page-container { min-height: 80vh; }
+        .text-anim-container { min-height: 3.5rem; }
+        #dynamic-text { transition: opacity 0.6s ease-in-out; opacity: 1; }
+        .fade-out { opacity: 0 !important; }
+        .gallery-img { width: 100%; height: auto; border-radius: 1.5rem; display: block; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+        .building-carousel { position: relative; width: 100%; height: 300px; border-radius: 2rem; overflow: hidden; margin-bottom: 2rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); background-color: #e2e8f0; }
+        .building-img { width: 100%; height: 100%; object-fit: cover; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased">
+
+    <header class="sticky top-0 z-50 backdrop-filter backdrop-blur-xl bg-white/70 border-b border-blue-100 p-6 md:px-20">
+        <nav class="flex justify-between items-center">
+            <h1 class="text-3xl font-black text-slate-900 flex items-center gap-2">
+                <span class="text-blue-500 text-3xl">✧</span> Budi Bahasa
+            </h1>
+            <div class="flex items-center gap-6">
+                <a href="https://youtu.be/ucS3nOAmMhA?si=MElEDacaHaG93Fbj" target="_blank" class="text-sm font-bold text-amber-700 hover:text-amber-900 transition">Profile Guru</a>
+                <a href="https://www.instagram.com/reel/DYQxLbzRPsq/?igsh=ZHAzYnVjZTR3NzZk" target="_blank" class="text-sm font-bold text-blue-700 hover:text-blue-900 transition">Tour</a>
+                <button onclick="showPage('home-page')" class="text-sm font-bold text-slate-600 hover:text-blue-600 transition">Beranda</button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="content-wrapper" class="max-w-4xl mx-auto p-6 md:p-20">
+        
+        <main id="home-page" class="page-container page-transition">
+            <section class="mb-12">
+                <h2 class="text-5xl md:text-6xl font-black mb-6 text-slate-900">Membentuk Karakter Melalui Bahasa.</h2>
+                
+                <div class="building-carousel">
+                    <!-- Menggunakan fallback dari Unsplash agar gambar tetap tampil meski URL utama diblokir -->
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1000&auto=format&fit=crop" 
+                         alt="" 
+                         class="building-img" 
+                         onerror="this.src='https://via.placeholder.com/1000x300?text=Foto+Sekolah'">
+                </div>
+
+                <div class="text-anim-container">
+                    <p id="dynamic-text" class="text-xl text-blue-900 font-medium italic mb-12">Selamat Datang di Sekolah Budi Bahasa</p>
+                </div>
+            </section>
+
+            <section class="mb-16 space-y-8">
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-slate-100">
+                    <h3 class="text-3xl font-bold mb-4 text-amber-700">Visi Kami</h3>
+                    <p class="text-xl italic text-slate-800 leading-relaxed mb-6">"Menjadi institusi pendidikan unggulan yang melahirkan insan cendekia, berkarakter mulia, serta siap bersaing di kancah global dengan pondasi bahasa yang kuat."</p>
+                    <h3 class="text-3xl font-bold mb-4 text-blue-900">Misi Kami</h3>
+                    <ul class="list-decimal pl-5 space-y-3 text-slate-700 text-lg">
+                        <li>Menanamkan nilai-nilai keimanan dan ketakwaan.</li>
+                        <li>Menyelenggarakan pembelajaran inovatif dan berkualitas.</li>
+                        <li>Membangun karakter siswa yang mandiri dan bertanggung jawab.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-8 mb-16">
+                <button onclick="window.location.href='halaman-program.html'" class="bg-white p-8 rounded-3xl shadow-lg hover:shadow-xl transition hover:scale-[1.02] text-left border border-amber-100">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">Program Unggulan</h3>
+                    <p class="text-slate-600">Klik untuk melihat detail lengkap 7 program pengembangan diri kami.</p>
+                </button>
+                <button onclick="showPage('mpls-gallery')" class="bg-blue-900 p-8 rounded-3xl shadow-lg hover:shadow-xl transition hover:scale-[1.02] text-left">
+                    <h3 class="text-2xl font-bold text-amber-400 mb-2">Dokumentasi Kegiatan</h3>
+                    <p class="text-blue-200">Lihat galeri foto MPLS, Upacara, dan Prestasi siswa.</p>
+                </button>
+            </section>
+
+            <section class="grid md:grid-cols-2 gap-8 mt-10">
+                <div class="bg-slate-900 p-8 rounded-3xl text-slate-300">
+                    <h4 class="text-xs font-bold text-amber-400 mb-6 uppercase">Fasilitas Pendukung</h4>
+                    <div class="grid grid-cols-1 gap-3 text-sm">
+                        <p>• Ruang Kelas Multimedia Ber-AC</p>
+                        <p>• Laboratorium Komputer & Bahasa</p>
+                        <p>• Perpustakaan Digital</p>
+                        <p>• Lapangan Olahraga Multi-Fungsi</p>
+                        <p>• Ruang Ibadah yang Nyaman</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-200">
+                    <h4 class="text-xs font-bold text-blue-600 mb-6 uppercase">Profil Resmi Sekolah</h4>
+                    <div class="space-y-3 text-sm text-slate-700">
+                        <p><strong>Nama Sekolah:</strong> SMP Budi Bahasa</p>
+                        <p><strong>NPSN:</strong> 20106752</p>
+                        <p><strong>Akreditasi:</strong> Terakreditasi B</p>
+                        <p><strong>Status:</strong> Swasta - Terpercaya</p>
+                        <p><strong>Email:</strong> <a href="mailto:smpbudibahasa@gmail.com" class="text-blue-600 underline">smpbudibahasa@gmail.com</a></p>
+                        <p><strong>Alamat:</strong> Jl. Kalianyar IV, Jakarta Barat</p>
+                    </div>
+                </div>
+            </section>
+            
+            <footer class="mt-20 text-center p-10 text-slate-500 text-sm border-t border-slate-200">
+                <p class="mb-4">Ikuti keseharian kami di Instagram:</p>
+                <a href="https://www.instagram.com/budi.bahasa.bercerita?igsh=MTRmZjJ5cnBvZnZ0aA==" target="_blank" class="text-blue-700 font-black text-lg hover:text-blue-900 transition">@SMPBudiBahasa</a>
+            </footer>
+        </main>
+
+        <main id="mpls-gallery" class="hidden-page page-container page-transition">
+            <button onclick="showPage('home-page')" class="text-blue-600 font-bold mb-8 hover:underline">← Kembali ke Beranda</button>
+            <h1 class="text-4xl font-black mb-8">Dokumentasi & Prestasi</h1>
+            <div class="space-y-6">
+                <!-- Anda bisa mengunggah foto-foto ini secara manual ke folder proyek Anda untuk kestabilan -->
+                <img src="https://i.postimg.cc/CdZ6C9sq/IMG-0961.jpg" referrerpolicy="no-referrer" loading="lazy" class="gallery-img">
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('main').forEach(m => m.classList.add('hidden-page'));
+            const target = document.getElementById(pageId);
+            target.classList.remove('hidden-page');
+            target.classList.add('page-transition');
+            window.scrollTo(0, 0);
+        }
+        const textElement = document.getElementById('dynamic-text');
+        const texts = ["Selamat Datang di Sekolah Budi Bahasa", "Membangun Masa Depan Berkarakter", "Cerdas, Berbudaya, dan Beretika"];
+        let index = 0;
+        setInterval(() => {
+            textElement.classList.add('fade-out');
+            setTimeout(() => {
+                index = (index + 1) % texts.length;
+                textElement.innerText = texts[index];
+                textElement.classList.remove('fade-out');
+            }, 600);
+        }, 4000);
+    </script>
+</body>
+</html>
+
